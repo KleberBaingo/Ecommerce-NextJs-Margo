@@ -1,38 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Claro, posso ajudá-lo a criar um README para sua aplicação de e-commerce de bolos usando Next.js, React, Tailwind CSS, Supabase e MongoDB.
 
-## Getting Started
+# E-commerce de Bolos
 
-First, run the development server:
+Este é um projeto de e-commerce de bolos construído usando Next.js, React, Tailwind CSS, Supabase e MongoDB. O objetivo da aplicação é permitir que os usuários naveguem por uma lista de bolos disponíveis, adicionem produtos ao carrinho de compras e façam o checkout para finalizar a compra.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Página inicial: exibe uma lista de bolos em destaque e categorias de bolos disponíveis.
+- Página de categoria: exibe uma lista de bolos de uma categoria específica.
+- Página de produto: exibe detalhes de um produto específico, incluindo imagem, descrição e preço.
+- Carrinho de compras: permite que o usuário adicione produtos ao carrinho de compras, visualize o subtotal e finalize a compra.
+- Página de checkout: permite que o usuário insira informações de pagamento e finalize a compra.
+- Área do administrador: permite que o administrador gerencie produtos, categorias e pedidos.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Tecnologias utilizadas
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Next.js: uma estrutura de aplicativo da web React de código aberto que permite renderização do lado do servidor e outras funcionalidades avançadas.
+- React: uma biblioteca JavaScript para construir interfaces de usuário.
+- Tailwind CSS: um conjunto de classes CSS pré-construídas que permitem estilizar facilmente os componentes do React.
+- Supabase: um serviço de banco de dados sem servidor que fornece autenticação, armazenamento de dados e API RESTful em tempo real.
+- MongoDB: um banco de dados NoSQL que armazena dados em documentos JSON.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Como executar o projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone este repositório em sua máquina local.
+2. Instale as dependências do projeto com `npm install`.
+3. Configure as variáveis de ambiente necessárias para a aplicação, incluindo as chaves de API para o Supabase e o endereço do banco de dados MongoDB.
+4. Inicie o servidor de desenvolvimento com `npm run dev`.
+5. Abra o navegador e navegue para `http://localhost:3000` para visualizar a aplicação.
 
-## Learn More
+## Como contribuir
 
-To learn more about Next.js, take a look at the following resources:
+1. Faça um fork deste repositório em sua conta do GitHub.
+2. Crie uma branch para suas alterações com `git checkout -b minha-feature`.
+3. Faça as alterações desejadas e faça commit com mensagens claras e concisas.
+4. Envie suas alterações para o seu repositório remoto com `git push origin minha-feature`.
+5. Abra um pull request para este repositório e aguarde a revisão.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto é licenciado sob a licença MIT - consulte o arquivo `LICENSE` para obter detalhes.

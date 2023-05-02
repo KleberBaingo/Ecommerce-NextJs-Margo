@@ -1,5 +1,3 @@
-Claro, posso ajudá-lo a criar um README para sua aplicação de e-commerce de bolos usando Next.js, React, Tailwind CSS, Supabase e MongoDB.
-
 # E-commerce de Bolos
 
 Este é um projeto de e-commerce de bolos construído usando Next.js, React, Tailwind CSS, Supabase e MongoDB. O objetivo da aplicação é permitir que os usuários naveguem por uma lista de bolos disponíveis, adicionem produtos ao carrinho de compras e façam o checkout para finalizar a compra.

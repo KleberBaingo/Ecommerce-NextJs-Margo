@@ -18,6 +18,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/_app.js",
+    "src/pages/index.js",
+    "src/pages/api/supabase.js"
+  ],
   "exclude": ["node_modules"]
 }

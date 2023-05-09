@@ -32,13 +32,13 @@ export default function Product() {
         <thead>
           <tr>
             <td>Nome do Produto</td>
-            <td></td>
+            <td>Funções</td>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td>{product.tittle}</td>
+              <td>{product.name}</td>
               <td>
                 <Link href={"/products/edit/" + product.id}>
                   <svg
@@ -58,7 +58,7 @@ export default function Product() {
                   Editar
                 </Link>
 
-                <Link href={"/products"}>
+                <Link href={"/products/delete/" + product.id}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

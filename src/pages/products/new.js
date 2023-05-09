@@ -4,32 +4,22 @@ import { supabase } from "../api/supabase";
 import { useRouter } from "next/router";
 
 export default function NewProduct() {
-  const [tittle, setTittle] = useState("");
+  const [name, setname] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [goToProducts, setGoToProducts] = useState(false);
-
-  function RedirectToProducts() {
-    const router = useRouter();
-
-    useEffect(() => {
-      router.push("/products");
-    }, []);
-
-    return null;
-  }
+  const { push } = useRouter();
 
   async function createProduct(ev) {
     ev.preventDefault();
 
-    const { data, error } = await supabase.from("produtos").insert({ tittle, description, price }); // usa a instância supabase para inserir um novo produto
-    setGoToProducts(true);
+    const { data, error } = await supabase.from("produtos").insert({ name, description, price }); // usa a instância supabase para inserir um novo produto
 
     if (error) {
       throw error;
       console.error("Erro ao criar produto:", error);
     } else {
       console.log("Produto criado com sucesso!");
+      push("/products");
     }
   }
 
@@ -41,8 +31,8 @@ export default function NewProduct() {
         <input
           type="text"
           placeholder="nome do produto"
-          value={tittle}
-          onChange={(ev) => setTittle(ev.target.value)}
+          value={name}
+          onChange={(ev) => setname(ev.target.value)}
         />
         <label>Descrição</label>
         <textarea
@@ -61,7 +51,6 @@ export default function NewProduct() {
           Salvar
         </button>
       </form>
-      {goToProducts && <RedirectToProducts />}
     </Layout>
   );
 }

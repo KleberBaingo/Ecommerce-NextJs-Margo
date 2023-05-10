@@ -112,7 +112,7 @@ export default function editProduct() {
   };
 
   function updateImagesOrder(images) {
-    console.log(images);
+    setImages(images);
   }
 
   return (

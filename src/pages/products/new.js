@@ -15,8 +15,8 @@ export default function NewProduct() {
     const { data, error } = await supabase.from("produtos").insert({ name, description, price }); // usa a instância supabase para inserir um novo produto
 
     if (error) {
-      throw error;
       console.error("Erro ao criar produto:", error);
+      throw error;
     } else {
       console.log("Produto criado com sucesso!");
       push("/products");

@@ -1,72 +1,72 @@
-import Layout from "@/components/Layout";
-import { useEffect, useState } from "react";
-import { supabase } from "../../api/supabase";
-import { useRouter, useParams } from "next/router";
+import Layout from '@/components/Layout'
+import { useEffect, useState } from 'react'
+import { supabase } from '../../api/supabase'
+import { useRouter, useParams } from 'next/router'
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function deleteProduct() {
-  const { push } = useRouter();
-  const [product, setProduct] = useState([]);
-  const router = useRouter();
-  const { id } = router.query;
-  const [name, setname] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  const { push } = useRouter()
+  const [product, setProduct] = useState([])
+  const router = useRouter()
+  const { id } = router.query
+  const [name, setname] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState('')
 
   function goBack() {
-    router.push("/products");
+    router.push('/products')
   }
 
   useEffect(() => {
-    getProduct();
-  }, []);
+    getProduct()
+  }, [])
 
   async function getProduct() {
     try {
-      const { data, error } = await supabase.from("produtos").select("*").eq("id", id);
+      const { data, error } = await supabase.from('produtos').select('*').eq('id', id)
 
-      if (error) throw error;
+      if (error) throw error
       if (data != null) {
-        setProduct(data[0]);
-        setname(data[0].name);
-        setPrice(data[0].price);
-        setDescription(data[0].description);
+        setProduct(data[0])
+        setname(data[0].name)
+        setPrice(data[0].price)
+        setDescription(data[0].description)
       }
     } catch (error) {
-      console.log("o erro é ", { error });
+      console.log('o erro é ', { error })
     }
   }
   async function deleteProduct(ev) {
-    const { data, error } = await supabase.from("produtos").delete().eq("id", id); // usa a instância supabase para inserir um novo produto
+    const { data, error } = await supabase.from('produtos').delete().eq('id', id) // usa a instância supabase para inserir um novo produto
     if (error) {
       // throw error;
-      console.error("Erro ao atualizar produto:", error);
+      console.error('Erro ao atualizar produto:', error)
     } else {
-      console.log("Produto atualizado com sucesso!");
+      console.log('Produto atualizado com sucesso!')
       setTimeout(() => {
-        push("/products");
-      }, 1500); // 3000 milissegundos = 3 segundos
+        push('/products')
+      }, 1500) // 3000 milissegundos = 3 segundos
     }
   }
 
   const handleClick = () => {
-    toast.success("Produto Deletado com sucesso!", {
-      position: "top-right",
+    toast.success('Produto Deletado com sucesso!', {
+      position: 'top-right',
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-    });
-  };
+    })
+  }
 
   return (
     <Layout>
       <h1>Tem certeza que quer deletar : {product.name} ?</h1>
-
+      <thead></thead>
       <table className="mt-3 basic">
         <thead>
           <tr className="text-center">
@@ -83,11 +83,12 @@ export default function deleteProduct() {
           <td>{product.price}</td>
         </tr>
       </table>
+
       <div className="p-2 flex justify-center gap-5">
         <button
           onClick={() => {
-            deleteProduct();
-            handleClick();
+            deleteProduct()
+            handleClick()
           }}
           type="submit"
           className="btn-red"
@@ -100,5 +101,5 @@ export default function deleteProduct() {
         <ToastContainer />
       </div>
     </Layout>
-  );
+  )
 }
